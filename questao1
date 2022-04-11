@@ -12,7 +12,7 @@ int main()
 
     int expressao1, expressao2, expressao3, expressao4;
 
-    expressao1 = &i;
+    expressao1 = (p == &i);
 
     expressao2 = *p - *q;
 
@@ -25,9 +25,10 @@ int main()
     return 0;
 }
 
+
 Respotas: 
 
-p == &i --> 6422300
+p == &i --> 1
 *p - *q --> -2
 **&p    --> 3
 3 - *p/(*q) + 7 --> 10
