@@ -1,0 +1,10 @@
+Respota:
+
+p = i           -->   Ilegal;
+q = &j          -->   Legal;
+p = &*&i        -->   Legal;
+i = (*&)j       -->   Legal;
+i = *&j         -->   Legal;
+i = *&*&j       -->   Legal;
+q = *p          -->   Ilegal;
+i = (*p)++ + *q -->   Legal;
