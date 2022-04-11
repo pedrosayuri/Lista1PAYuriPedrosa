@@ -1,0 +1,31 @@
+Código para estudo:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+
+    int valor;
+    int *p1;
+    float temp;
+    float *p2;
+    char aux;
+    char *nome = "Ponteiros";
+    char *p3;
+    int idade;
+    int vetor[3];
+    int *p4;
+    int *p5;
+
+    valor = 10;
+    p1 = &valor;
+    *p1 = 20;
+
+    printf("%d \n", valor);
+
+    return 0;
+}
+
+Resultado:
+
+20
