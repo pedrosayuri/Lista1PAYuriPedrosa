@@ -1,0 +1,44 @@
+Código para estudo:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+
+    int vet[] = {4, 9, 13};
+    int i;
+
+    for(i = 0; i < 3; i++) {
+        printf("%d ", *(vet+i));
+    }
+
+    return 0;
+}
+
+<------------------------------->
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+
+    int vet[] = {4, 9, 13};
+    int i;
+
+    for(i = 0; i < 3; i++) {
+        printf("%x ", *(vet+i));
+    }
+
+    return 0;
+}
+
+
+Resultado:
+
+Para o primeiro programa, ele declara um vetor vet[] com valores 4, 9 e 13, depois faz um laço
+de repetição com o for para imprimir o que está dentro do bloco de memória do vetor vet e então,
+a cada incremento do for, percorre uma nova posição do vetor e visto que o vetor vet é um inteiro,
+logo, vai de 4 em 4 bytes.
+
+Já para o segundo programa, tem a mesma ideia, porém impre o endereço dos blocos do vetor.
+
