@@ -1,0 +1,127 @@
+PARA O CHAR
+
+Código para estudo:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+ 	 char x[4];
+ 	 int i;
+
+ 	 for(i = 0; i <= 3; i++){
+  	  printf("x + %d = %d \n", i+0 ,(x+i));
+ 	}
+}
+
+Resultado:
+
+Se x for declarado como char, tinhamos na questão anterior que:
+
+- Para x + 1 --> 4092 + 1 == 4093;
+- Para x + 2 --> 4092 + 2 == 4094;
+- Para x + 3 --> 4092 + 3 == 4095;
+
+Para a questão 10, minha máquina está armazenando o x no endereço de memória 6422300, portanto temos que:
+
+- Para x + 1 --> 6422300 + 1 == 6422301;
+- Para x + 2 --> 6422300 + 2 == 6422302;
+- Para x + 3 --> 6422300 + 3 == 6422303;
+
+Logo, é possível analisar que está andando de 1 em 1 byte, assim como na questão 9 quando o x estava sendo armazenado no 4092.
+
+<---------------------------------------------------->
+
+PARA O INT
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+ 	 int x[4];
+ 	 int i;
+
+ 	 for(i = 0; i <= 3; i++){
+  	  printf("x + %d = %d \n", i+0 ,(x+i));
+ 	}
+}
+
+Resultado:
+
+Se x for declarado como int, tinhamos na questão anterior que:
+
+- Para x + 1 --> 4092 + 1 == 4094;
+- Para x + 2 --> 4092 + 2 == 4096;
+- Para x + 3 --> 4092 + 3 == 4098;
+
+Para a questão 10, minha máquina está armazenando o x no endereço de memória 6422288, portanto temos que:
+
+- Para x + 1 --> 6422288 + 1 == 6422292;
+- Para x + 2 --> 6422288 + 2 == 6422296;
+- Para x + 3 --> 6422288 + 3 == 6422300;
+
+Logo, é possível analisar que está andando de 4 em 4 bytes, diferenciando-se da questão 9 quando o x estava sendo armazenado no 4092.
+
+<---------------------------------------------------->
+
+PARA O FLOAT
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+ 	 float x[4];
+ 	 int i;
+
+ 	 for(i = 0; i <= 3; i++){
+  	  printf("x + %d = %d \n", i+0 ,(x+i));
+ 	}
+}
+
+Resultado:
+
+Se x for declarado como float, tinhamos na questão anterior que:
+
+- Para x + 1 --> 4092 + 1 == 4096;
+- Para x + 2 --> 4092 + 2 == 409A;
+- Para x + 3 --> 4092 + 3 == 409E;
+
+Para a questão 10, minha máquina está armazenando o x no endereço de memória 6422288, portanto temos que:
+
+- Para x + 1 --> 6422288 + 1 == 6422292;
+- Para x + 2 --> 6422288 + 2 == 6422296;
+- Para x + 3 --> 6422288 + 3 == 6422300;
+
+Logo, é possível analisar que está andando de 4 em 4 bytes, assim como na questão 9 quando o x estava sendo armazenado no 4092.
+
+<---------------------------------------------------->
+
+PARA DOUBLE
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+ 	 double x[4];
+ 	 int i;
+
+ 	 for(i = 0; i <= 3; i++){
+  	  printf("x + %d = %d \n", i+0 ,(x+i));
+ 	}
+}
+
+Resultado:
+
+Se x for declarado como double, tinhamos na questão anterior que:
+
+- Para x + 1 --> 4092 + 1 == 409A;
+- Para x + 2 --> 4092 + 2 == 40A2;
+- Para x + 3 --> 4092 + 3 == 40AA;
+
+Para a questão 10, minha máquina está armazenando o x no endereço de memória 6422272, portanto temos que:
+
+- Para x + 1 --> 6422272 + 1 == 6422280;
+- Para x + 2 --> 6422272 + 2 == 6422288;
+- Para x + 3 --> 6422272 + 3 == 6422296;
+
+Logo, é possível analisar que está andando de 8 em 8 bytes, assim como na questão 9 quando o x estava sendo armazenado no 4092.
