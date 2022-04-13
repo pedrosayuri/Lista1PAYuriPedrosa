@@ -1,0 +1,25 @@
+Resultado:
+
+Se x for declarado como char, temos que:
+
+- Para x + 1 --> 4092 + 1 == 4093;
+- Para x + 2 --> 4092 + 2 == 4094;
+- Para x + 3 --> 4092 + 3 == 4095;
+
+Se x for declarado como int, temos que:
+
+- Para x + 1 --> 4092 + 1 == 4094;
+- Para x + 2 --> 4092 + 2 == 4096;
+- Para x + 3 --> 4092 + 3 == 4098;
+
+Se x for declarado como float, temos que:
+
+- Para x + 1 --> 4092 + 1 == 4096;
+- Para x + 2 --> 4092 + 2 == 409A;
+- Para x + 3 --> 4092 + 3 == 409E;
+
+Se x for declarado como double, temos que:
+
+- Para x + 1 --> 4092 + 1 == 409A;
+- Para x + 2 --> 4092 + 2 == 40A2;
+- Para x + 3 --> 4092 + 3 == 40AA;
