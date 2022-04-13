@@ -1,0 +1,23 @@
+Código para estudo:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+
+    int mat[4], *p, x;
+
+    p = mat + 1;
+    p = mat++;
+    p = ++mat;
+    x = (*mat)++;
+
+    printf("%d", p);
+    printf("\n%d", x);
+
+    return 0;
+}
+
+Resultado:
+
+Apenas p = mat + 1; e x = (*mat)++; , pois não nas outras expressões não é possível increventar.
