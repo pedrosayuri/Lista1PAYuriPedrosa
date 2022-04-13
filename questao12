@@ -1,0 +1,31 @@
+Um ponteiro para uma função serve para declarar qual dunção será executada sem a necessidade
+de escrever o nome da função, sendo assim, apontando para a chamada da função e com isso,
+torna o tempo de execução do código menor.
+
+Código para estudo:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void Soma(int *num, int x, int y) {
+    *num = x + y;
+}
+
+int main() {
+
+    int soma, numb1, numb2;
+
+    printf("Digite um valor para X: ");
+    scanf("%d" , &numb1);
+
+    printf("Digite um valor para Y: ");
+    scanf("%d" , &numb2);
+
+    Soma(&soma, numb1, numb2);
+
+    printf("%d + %d = %d", numb1, numb2, soma);
+
+   return;
+
+}
