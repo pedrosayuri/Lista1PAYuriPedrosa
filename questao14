@@ -1,0 +1,34 @@
+Código para estudo:
+
+#include <stdio.h> // biblioteca para importar o printf, scanf, entre outras coisas.
+#include <stdlib.h> // biblioteca para importar o malloc, sizeof, free, qsort, entre outras coisas
+
+int analisaMaior (const void * a, const void * b) { // cria uma função chamada analisaMaior que compara qual valor do vetor é maior ou menor
+  return ( *(float*)a - *(float*)b );
+}
+
+int main() {
+
+    int n, i; // cria variáveis do tipo inteiro
+
+    float *x; // cria um ponteiro do tipo float
+
+    printf("Digite o tamanho: "); // digita na tela
+    scanf("%d", &n); // coleta dados fornecido pelo usuário
+
+    x = (float*) malloc(n*sizeof(float)); // aloca os dados do ponteiro na memória de acordo com o tamanho do array
+
+    for(i = 0; i < n; i++) { // cria um lopping de incrementação
+        scanf("%f" , &x[i]); // coleta dados fornecido pelo usuário para colocar dentro do array
+    }
+
+    qsort(x, n, sizeof(float), analisaMaior); // faz a chamada da função qsort, o primeiro item --> Refere-se ao ponteiro, o segundo --> o tamanho do array, o terceiro --> ao tamanho em bytes do tipo da varíavel do ponteiro, e o quarto --> chama a função criada
+
+    for(i = 0; i < n; i++) { // cria um lopping de incrementação
+        printf("%.2f " , x[i]); // // digita na tela
+    }
+
+    free(x); // libera a memória utilizada.
+
+    return 0;
+}
