@@ -1,0 +1,51 @@
+Código para estudo:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void analisaMaior(float *numb, int n) {
+    int i, j;
+
+    float tmp = 0;
+
+    for(i = 0; i < n; i++) {
+        for(j = i + 1; j < n; j++) {
+            if(numb[i] > numb[j]) {
+                tmp = numb[i];
+                numb[i] = numb[j];
+                numb[j] = tmp;
+            }
+        }
+
+    }
+
+    for(i = 0; i < n; i++) {
+        printf("%.2f ", numb[i]);
+    }
+    printf("\n");
+
+}
+
+int main() {
+
+    int n, i;
+
+    float *x;
+
+    printf("Digite o tamanho: ");
+    scanf("%d", &n);
+
+    x = (float*) malloc(n*sizeof(float));
+
+    for(i = 0; i < n; i++) {
+        scanf("%f" , &x[i]);
+    }
+
+    analisaMaior(x, n);
+
+    free(x);
+
+
+
+    return 0;
+}
