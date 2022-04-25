@@ -28,7 +28,7 @@ int main() {
     printf("Digite os valores do vetor 1: \n");
 
     for(i = 0; i < n; i++) {
-        scanf("%d ", &vetor1[i]);
+        scanf("%d", &vetor1[i]);
     }
 
     printf("\n");
@@ -36,12 +36,12 @@ int main() {
     printf("Digite os valores do vetor 2: \n");
 
     for(i = 0; i < n; i++) {
-        scanf("%d ", &vetor2[i]);
+        scanf("%d", &vetor2[i]);
     }
 
     vetorSoma(n, vetor1, vetor2, vetorDaSomar);
 
-    printf("Resultado: \n");
+    printf("Resultado: ");
 
     for(i = 0; i < n; i++) {
         printf("%d ", vetorDaSomar[i]);
