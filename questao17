@@ -1,123 +1,54 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int **MatA, **MatB, **MatC;
-int ColA, ColB, LinA, LinB;
-int i, j, k, count;
+int *vetorSoma(int n, int *vet1, int *vet2, int *vetSoma) {
 
-int multiplicacaoDeMatrizes(int **matrizA, int **matrizB, int **matrizC, int linhasA, int colunasA, int colunasB) {
+    int i;
 
-    for (i = 0; i < linhasA; i++) {
-      for (j = 0; j < colunasB; j++) {
-          matrizC[i][j] = 0;
-      }
+    for(i = 0; i < n; i++) {
+        vetSoma[i] = vet1[i] + vet2[i];
     }
 
-    for(i = 0; i < linhasA; i++) {
-      for (j = 0; j < linhasA; j++) {
-        for (k = 0; k < colunasB; k++) {
-          matrizC[i][j] = matrizC[i][j] + (matrizA[i][k] * matrizB[k][j]);
-        }
-      }
-    }
+    return vetSoma[i];
 
-    for(i = 0; i < linhasA; i++) {
-      for (j = 0; j < colunasB; j++) {
-        return matrizC[i][j];
-      }
-    }
-
-    return 0;
 }
 
 int main() {
 
-    printf("Digite o numero de linhas da matriz A: ");
-    scanf("%d", &LinA);
+    int i, n;
 
-    printf("Digite o numero de colunas da matriz A: ");
-    scanf("%d", &ColA);
+    printf("Digite o tamanho dos vetores: ");
+    scanf("%d", &n);
 
-    LinB = ColA;
+    int *vetor1, *vetor2, vetorDaSomar[n];
 
-    printf("Digite o numero de colunas da matriz B: ");
-    scanf("%d", &ColB);
+    vetor1 = (int*) malloc(n*sizeof(int));
+    vetor2 = (int*) malloc(n*sizeof(int));
 
-    MatA = malloc(LinA * sizeof(int*));
+    printf("Digite os valores do vetor 1: \n");
 
-    MatA[0] = malloc(LinA * ColA * sizeof(int));
-
-    for(i = 1; i < LinA; i++) {
-        MatA[i] = MatA[0] + i * ColA;
+    for(i = 0; i < n; i++) {
+        scanf("%d", &vetor1[i]);
     }
 
-    MatB = malloc(LinB * sizeof(int*));
-
-    MatB[0] = malloc(LinB * ColB * sizeof(int));
-
-    for(i = 1; i < LinB; i++) {
-        MatB[i] = MatB[0] + i * ColB;
-    }
-
-    MatC = malloc(LinA * sizeof(int*));
-
-    MatC[0] = malloc(LinA * ColB * sizeof(int));
-
-    for(i = 1; i < LinA; i++) {
-        MatC[i] = MatC[0] + i * ColB;
-    }
-
-    printf("Digite os valores da matriz A: \n");
-    for(i = 0; i < LinA; i++) {
-        for(j = 0; j < ColA; j++) {
-            scanf("%d", &MatA[i][j]);
-        }
-    }
-
-    printf("Digite os valores da matriz B: \n");
-    for(i = 0; i < LinB; i++) {
-        for(j = 0; j < ColB; j++) {
-            scanf("%d", &MatB[i][j]);
-        }
-    }
-
-    multiplicacaoDeMatrizes(MatA,MatB,MatC,LinA,ColA,ColB);
-
-    printf("\nlinhas A: %d, colunas A: %d, linhas B: %d, colunas B: %d, linhas C: %d, colunas C: %d", LinA, ColA, ColA, ColB, LinA, ColB);
-
-    printf("\n\n*--Matriz A:--*\n");
-
-    for(i = 0; i < LinA; i++) {
-        printf("| ");
-        for(j = 0; j < ColA; j++) {
-            printf("%d ", MatA[i][j]);
-        }
-        printf("|\n");
-    }
-
-    printf("\n*--Vezes--*\n\n");
-
-    printf("*--Matriz B:--*\n");
-    for(i = 0; i < ColA; i++) {
-            printf("| ");
-        for(j = 0; j < ColB; j++) {
-            printf("%d ", MatB[i][j]);
-        }
-        printf("|\n");
-    }
     printf("\n");
 
-    printf("\n*--Igual--*\n\n");
+    printf("Digite os valores do vetor 2: \n");
 
-    printf("*--Matriz C:--*\n");
-
-    for(i = 0; i < LinA; i++) {
-        printf("| ");
-      for (j = 0; j < ColB; j++) {
-        printf("%d ", MatC[i][j]);
-      }
-      printf("|\n");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &vetor2[i]);
     }
+
+    vetorSoma(n, vetor1, vetor2, vetorDaSomar);
+
+    printf("Resultado: \n");
+
+    printf("%d", vetorDaSomar[0]);
+    for(i = 1; i < n; i++) {
+        printf(", %d", vetorDaSomar[i]);
+    }
+
+    free(vetor1);
 
     return 0;
 }
